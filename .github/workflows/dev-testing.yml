@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: checkout repository
-      uses: actions/checkoutv@2
+      uses: actions/checkout@v2
 
     - name: create .env file
       run: |
