@@ -6,6 +6,7 @@ on:
 
 jobs:
   build-and-test: 
+    name: Build and Testing
     runs-on: ubuntu-latest
     environment: dev-testing
 
