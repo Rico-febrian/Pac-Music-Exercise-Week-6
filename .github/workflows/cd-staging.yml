@@ -19,6 +19,7 @@ jobs:
             MINIO_STG_ACCESS_KEY: ${{ secrets.MINIO_STG_ACCESS_KEY }}
             MINIO_STG_SECRET_KEY: ${{ secrets.MINIO_STG_SECRET_KEY }}
             APP_STG_PORT: ${{ secrets.APP_STG_PORT }}
+            APP_NAME: ${{ secrets.APP_IMAGE }}
             
           with:
             host: ${{ secrets.SSH_HOST_STAGING }}
@@ -41,6 +42,7 @@ jobs:
               echo "MINIO_STG_ENDPOINT=$MINIO_STG_ENDPOINT" > .env
               echo "MINIO_STG_ACCESS_KEY=$MINIO_STG_ACCESS_KEY" >> .env
               echo "MINIO_STG_SECRET_KEY=$MINIO_STG_SECRET_KEY" >> .env
+              echo "APP_IMAGE=$APP_IMAGE" >> .env
           
               # Run app
               sudo docker compose up --build --detach pacmusic-stg
