@@ -24,7 +24,7 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
           APP_PROD_PORT: ${{ secrets.APP_PROD_PORT }}
-          APP_IMAGE: ${{ secrets.APP_IMAGE }}
+          APP_NAME: ${{ secrets.APP_IMAGE }}
           APP_TAG: ${{ github.event.release.tag_name }}
 
         with:
@@ -51,7 +51,7 @@ jobs:
             echo "MINIO_PROD_ACCESS_KEY=$MINIO_PROD_ACCESS_KEY" >> .env
             echo "MINIO_PROD_SECRET_KEY=$MINIO_PROD_SECRET_KEY" >> .env
             echo "APP_PROD_PORT=$APP_PROD_PORT" >> .env
-            echo "APP_IMAGE=${APP_IMAGE}" >> .env
+            echo "APP_IMAGE=${APP_NAME}" >> .env
             echo "APP_TAG=$APP_TAG" >> .env
 
             # Run app
